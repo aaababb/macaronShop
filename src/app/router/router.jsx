@@ -1,6 +1,7 @@
 import { useRoutes } from 'react-router-dom'
 import Layout from '../../widgets/Layout/Layout'
 import NotFound from '../../widgets/NotFound/NotFound'
+import SaleRouter from '../../features/SALE/api'
 
 const MyRoutes = () => {
 	return useRoutes([
@@ -8,7 +9,7 @@ const MyRoutes = () => {
 			path: '',
 			element: <Layout />,
             errorElement:<NotFound/>,
-			children: [{}, BranchRoute],
+			children: [BranchRoute,SaleRouter],
 		},
 	])
 }
