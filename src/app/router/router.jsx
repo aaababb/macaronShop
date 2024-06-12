@@ -1,16 +1,17 @@
-import { useRoutes } from 'react-router-dom'
-import Layout from '../../widgets/Layout/Layout'
-import NotFound from '../../widgets/NotFound/NotFound'
-import SaleRouter from '../../features/SALE/api'
+import { createBrowserRouter } from "react-router-dom";
+import Layout from "../../widgets/Layout/Layout";
+import NotFound from "../../widgets/NotFound/NotFound";
+import HomePage from "../../pages/HomePage/HomePage";
 
-const MyRoutes = () => {
-	return useRoutes([
-		{
-			path: '',
-			element: <Layout />,
-            errorElement:<NotFound/>,
-			children: [BranchRoute,SaleRouter],
-		},
-	])
-}
-export default MyRoutes
+export const router = createBrowserRouter([{
+    path:"/",
+    element:<Layout/>,
+    errorElement:<NotFound/>,
+    children:[
+        {
+            path: '/',
+            element: <HomePage/>
+        },
+        
+    ]
+}])
