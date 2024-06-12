@@ -8,7 +8,6 @@ const Layout = () => {
 	return (
 		<Box>
             <Header/>
-				dfghjk
 				<Outlet />
             <Footer/>
 		</Box>
